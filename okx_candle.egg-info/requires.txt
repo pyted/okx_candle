@@ -1,6 +1,0 @@
-numpy
-pandas
-requests
-candlelite
-okx_api
-paux

@@ -147,7 +147,7 @@ class HistoryCandle(MarketBase):
             # 计算limit
             limit = self._get_limit(num=(end_ts - before_ts) / bar_interval + 1)
             # 获取K线数据
-            result = self._marketAPI.get_history_candles(
+            result = self.marketAPI.get_history_candles(
                 instId=symbol,
                 before=before_ts - 1,
                 after=before_ts + (limit - 1) * bar_interval + 1,
@@ -214,7 +214,7 @@ class HistoryCandle(MarketBase):
             # 计算limit
             limit = self._get_limit(num=length - len(candle_list))
             # 获取K线数据
-            result = self._marketAPI.get_history_candles(
+            result = self.marketAPI.get_history_candles(
                 instId=symbol,
                 before=after_ts - (limit - 1) * bar_interval - 1,
                 after=after_ts + 1,

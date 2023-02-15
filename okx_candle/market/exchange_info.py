@@ -29,7 +29,7 @@ class ExchangeInfo(MarketBase):
         ):
             # 更新数据并设置时间戳
             setattr(self, '_exchangeInfo_caches',
-                    [self._publicAPI.get_instruments(instType=self.instType, uly=uly), time.time() * 1000])
+                    [self.publicAPI.get_instruments(instType=self.instType, uly=uly), time.time() * 1000])
         # 返回缓存数据
         return getattr(self, '_exchangeInfo_caches')[0]
 

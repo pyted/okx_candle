@@ -16,14 +16,15 @@ class MarketBase():
             timezone='Asia/Shanghai'
     ):
         self.instType = instType.upper()
+
         FLAG = '0'  # 实盘
-        self._marketAPI = Market(
+        self.marketAPI = Market(
             key=key,
             secret=secret,
             passphrase=passphrase,
             flag=FLAG
         )
-        self._publicAPI = Public(
+        self.publicAPI = Public(
             key=key,
             secret=secret,
             passphrase=passphrase,
