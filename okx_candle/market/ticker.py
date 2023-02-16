@@ -23,12 +23,25 @@ class Ticker(MarketBase):
 
     # 获取单个产品的行情
     def get_ticker(self, symbol: str) -> dict:
-        return self.marketAPI.get_ticker(instId=symbol)
+        result = self.marketAPI.get_ticker(instId=symbol)
+        if result['code'] != '0':
+            return result
+        result['data'] = result['data'][0]
+        return result
+
 
     # 产品深度
     def get_books(self, symbol: str, sz: int = 1):
-        return self.marketAPI.get_books(instId=symbol, sz=sz)
+        result = self.marketAPI.get_books(instId=symbol, sz=sz)
+        if result['code'] != '0':
+            return result
+        result['data'] = result['data'][0]
+        return result
 
     # 获取产品轻量深度
     def get_books_lite(self, symbol: str):
-        return self.marketAPI.get_books_lite(instId=symbol)
+        result = self.marketAPI.get_books_lite(instId=symbol)
+        if result['code'] != '0':
+            return result
+        result['data'] = result['data'][0]
+        return result
