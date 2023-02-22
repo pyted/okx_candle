@@ -1,9 +1,5 @@
-from okx_api.market import Market
-from okx_api.public import Public
-
-
-# from okx_candle.api.Market_api import MarketAPI
-# from okx_candle.api.Public_api import PublicAPI
+from okx.market import Market
+from okx.public import Public
 
 
 class MarketBase():
