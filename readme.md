@@ -32,7 +32,7 @@ candle_map的格式：candle_map[\<symbol:str\>] = \<candle:np.ndarray\>
 
 ```python
 from okx_candle import CandleServer
-from ppring import pprint
+from pprint import pprint
 
 candleServer = CandleServer('SWAP')  # SWAP 永续合约
 candleServer.run_candle_map()
