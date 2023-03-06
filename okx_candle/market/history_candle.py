@@ -1,5 +1,6 @@
 import time
 import datetime
+import pendulum
 import pandas as pd
 import numpy as np
 import paux.date as _date
@@ -288,7 +289,17 @@ class HistoryCandle(MarketBase):
         start = int(date.timestamp() * 1000)
         bar_interval = _interval.get_interval(bar)
         # 终止毫秒时间戳
-        end = int(start + 1000 * 60 * 60 * 24 - 1 * bar_interval)
+        end_date = datetime.date(year=date.year, month=date.month, day=date.day) + datetime.timedelta(days=1)
+        end_date = pendulum.datetime(
+            year=end_date.year,
+            month=end_date.month,
+            day=end_date.day,
+            hour=0,
+            minute=0,
+            second=0,
+            tz=self.timezone,
+        )
+        end = int(end_date.timestamp() * 1000 - 1 * bar_interval)
         # [RETURN]
         return self.get_history_candle(
             symbol=symbol,
