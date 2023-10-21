@@ -17,7 +17,7 @@ from okx_candle.server.rule import CandleRule
 
 
 class CandleServer():
-    def __init__(self, instType: str, rule=CandleRule):
+    def __init__(self, instType: str, rule=CandleRule, proxies={}, proxy_host: str = None):
         # 规则
         self.rule = rule
         # 产品类型
@@ -28,7 +28,9 @@ class CandleServer():
             key=self.rule.KEY,
             secret=self.rule.SECRET,
             passphrase=self.rule.PASSPHRASE,
-            timezone=self.rule.TIMEZONE
+            timezone=self.rule.TIMEZONE,
+            proxies=proxies,
+            proxy_host=proxy_host,
         )
         # 产品过滤器 用于candle_map的更新
         self.filter = _filter.Filter()

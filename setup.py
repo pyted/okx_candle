@@ -10,7 +10,7 @@ URL = "https://github.com/pyted/okx_candle"
 EMAIL = 'pyted@outlook.com'
 AUTHOR = 'pyted'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '1.0.7'
+VERSION = '2.0.1'
 
 REQUIRED = [
     'pendulum',
@@ -18,7 +18,7 @@ REQUIRED = [
     'pandas',
     'requests',
     'candlelite',
-    'okx_api',
+    'okx',
     'paux',
 ]
 

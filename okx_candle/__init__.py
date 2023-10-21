@@ -5,4 +5,4 @@ from okx_candle import utils
 from candlelite.crypto.okx_lite import OkxLite
 
 
-__version__ = '1.0.7'
+__version__ = '2.0.1'

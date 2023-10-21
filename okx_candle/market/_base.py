@@ -9,7 +9,9 @@ class MarketBase():
             key: str = '',
             secret: str = '',
             passphrase: str = '',
-            timezone='Asia/Shanghai'
+            timezone='Asia/Shanghai',
+            proxies={},
+            proxy_host: str = None,
     ):
         self.instType = instType.upper()
 
@@ -18,12 +20,16 @@ class MarketBase():
             key=key,
             secret=secret,
             passphrase=passphrase,
-            flag=FLAG
+            flag=FLAG,
+            proxies=proxies,
+            proxy_host=proxy_host,
         )
         self.publicAPI = Public(
             key=key,
             secret=secret,
             passphrase=passphrase,
-            flag=FLAG
+            flag=FLAG,
+            proxies=proxies,
+            proxy_host=proxy_host,
         )
         self.timezone = timezone

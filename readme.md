@@ -1,4 +1,4 @@
-# Okx_candle v1.0.7
+# Okx_candle v2.0.1 (文档待更新A)
 
 ## 1 Okx_candle的设计目的？
 
